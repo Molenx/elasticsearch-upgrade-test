@@ -1,0 +1,50 @@
+﻿{
+    "mappings": {
+    "tomato": {
+        "_all" :{
+            "enabled" : false
+        },
+    "properties": {
+              "id": {
+                  "type": "string",
+                      "index": "not_analyzed",
+                      "doc_values": false
+              },
+              "dateTimeCreated": {
+                  "type": "date"
+              },
+                "dateTimeModified": {
+                    "type": "date"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "isPublic": {
+                    "type": "boolean"
+                },
+                "tomatoCenter": {
+                    "type": "geo_point",
+                    "geohash": true,
+                    "geohash_prefix": true,
+                    "geohash_precision": 3
+                },
+          "tomShape": {
+              "type": "geo_shape",
+          "tree": "quadtree",
+                    "precision": "1m"
+          },
+                "type": {
+                    "type": "string"
+                },
+                "farmId": {
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "doc_values": false
+                }
+          }
+      }
+    }
+}
